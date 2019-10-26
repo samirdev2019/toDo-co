@@ -3,8 +3,9 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
@@ -38,6 +39,23 @@ class User implements UserInterface
      * @Assert\Email(message="Le format de l'adresse n'est pas correcte.")
      */
     private $email;
+    /**
+     * The user can have more Tasks and its removal leads to delete
+     * all these last.
+     *
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Task", mappedBy="user",
+     * cascade={"persist", "remove"})
+     */
+    private $tasks;
+    /**
+     * @ORM\Column(type="array")
+     */
+    private $roles;
+
+    public function __construct()
+    {
+        $this->tasks = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -82,9 +100,51 @@ class User implements UserInterface
     public function getRoles()
     {
         return array('ROLE_USER');
+        
     }
 
     public function eraseCredentials()
     {
+    }
+    //***************************** */
+    /**
+     * The getter of taks 
+     *
+     * @return Collection
+     */
+    public function getTasks():Collection
+    {
+        return $this->tasks;
+    }
+    /**
+     * This function allow to add an tasks to this user collection(tasks)
+     *
+     * @param Tasks $task
+     *
+     * @return self
+     */
+    public function addTask(Task $task): self
+    {
+        if (!$this->tasks->contains($task)) {
+            $this->tasks[] = $task;
+            $task->setUser($this);
+        }
+        return $this;
+    }
+     /**
+     * This function allow to remove an task of this user collection(tasks)
+     *
+     * @param task $task
+     *
+     * @return self
+     */
+    public function removeTask(Task $task): self
+    {
+        if ($this->tasks->contains($task)) {
+            $this->tasks->removeElement($task);
+            if ($task->getUser() === $this) {
+                $task->setUser(null);
+            }
+        }
     }
 }
