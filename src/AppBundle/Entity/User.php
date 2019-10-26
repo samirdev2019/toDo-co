@@ -96,23 +96,42 @@ class User implements UserInterface
     {
         $this->email = $email;
     }
-
+    /**
+     * This getter role function is modified before the users have ROLE_USER AUTOMATICALLY
+     *  now user can have also their roles from database. 
+     *
+     * @return array
+     */
     public function getRoles()
     {
-        return array('ROLE_USER');
-        
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+    return array_unique($roles);
+    }
+    /**
+     * This setter function allows to attribute the role to a user
+     *
+     * @param array $roles
+     * @return self
+     */
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
     }
 
     public function eraseCredentials()
     {
     }
-    //***************************** */
     /**
      * The getter of taks 
      *
-     * @return Collection
+     * @return mixed
      */
-    public function getTasks():Collection
+    public function getTasks()
     {
         return $this->tasks;
     }
