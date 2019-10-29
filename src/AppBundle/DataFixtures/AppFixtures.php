@@ -39,7 +39,7 @@ class AppFixtures implements ORMFixtureInterface
             for($j=0; $j<=20; $j++) {
                 $task = new Task ();
                 $task->setCreatedAt(new \DateTime());
-                $task->setTitle($faker->jobTitle);
+                $task->setTitle($faker->jobTitle.' by-'.$roles[$i]);
                 $task->setContent($faker->sentence($nbWords = 6, $variableNbWords = true));
                 $task->isDone($faker->boolean);
                 $task->setUser($user);
@@ -48,7 +48,7 @@ class AppFixtures implements ORMFixtureInterface
             for($k=0; $k<=20; $k++) {
                 $task = new Task ();
                 $task->setCreatedAt(new \DateTime());
-                $task->setTitle($faker->jobTitle);
+                $task->setTitle($faker->jobTitle.' by-annonymous');
                 $task->setContent($faker->sentence($nbWords = 6, $variableNbWords = true));
                 $task->isDone($faker->boolean);
                 $manager->persist($task);            }
