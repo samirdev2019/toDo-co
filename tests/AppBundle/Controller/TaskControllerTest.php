@@ -55,5 +55,14 @@ class TaskControllerTest extends WebTestCase
         $crawler = $client->followRedirect();
         $this->assertSame(1, $crawler->filter('div.alert.alert-success')->count());
     }
-    
+    public function testDeleteTaskAction()
+    {
+        $client = static::createClient( [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => 'admin'] );
+        $crawler = $client->request('GET','/tasks');
+        $form = $crawler->selectButton("Supprimer")->last()->form();
+        $client->submit($form);
+        $crawler = $client->followRedirect();
+        $this->assertEquals(200,$client->getResponse()->getStatusCode());
+        $this->assertSame(1, $crawler->filter('div.alert.alert-success:contains("Superbe ! La tâche a bien été supprimée.")')->count());
+    }
 }
