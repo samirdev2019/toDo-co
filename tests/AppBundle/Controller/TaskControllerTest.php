@@ -65,4 +65,14 @@ class TaskControllerTest extends WebTestCase
         $this->assertEquals(200,$client->getResponse()->getStatusCode());
         $this->assertSame(1, $crawler->filter('div.alert.alert-success:contains("Superbe ! La tâche a bien été supprimée.")')->count());
     }
+    public function testToggleTaskAction()
+    {
+        $client = static::createClient( [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => 'admin'] );
+        $crawler = $client->request('GET','/tasks');
+        $form = $crawler->selectButton("Marquer comme faite")->last()->form();
+        $client->submit($form);
+        $crawler = $client->followRedirect();
+        $this->assertEquals(200,$client->getResponse()->getStatusCode());
+        $this->assertSame(1, $crawler->filter('div.alert.alert-success:contains("a bien été marquée comme faite.")')->count());
+    }
 }
