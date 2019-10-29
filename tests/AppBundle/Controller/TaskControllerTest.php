@@ -8,11 +8,11 @@ class TaskControllerTest extends WebTestCase
     
     public function testTaskList()
     {
-        $client = static::createClient( [], ['PHP_AUTH_USER' => 'samir123', 'PHP_AUTH_PW' => 'samir'] );
+        $client = static::createClient( [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => 'admin'] );
         $client->request( 'GET', '/check_login' );
         $crawler = $client->request( 'GET', '/', [], [], [
-            'PHP_AUTH_USER' => 'samir123',
-            'PHP_AUTH_PW' => 'samir',
+            'PHP_AUTH_USER' => 'admin',
+            'PHP_AUTH_PW' => 'admin',
         ] );
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $link = $crawler->selectLink('Consulter la liste des tâches à faire')->link();
@@ -25,7 +25,7 @@ class TaskControllerTest extends WebTestCase
     }
     public function testCreateAction()
     {
-        $client = static::createClient( [], ['PHP_AUTH_USER' => 'samir123', 'PHP_AUTH_PW' => 'samir'] );
+        $client = static::createClient( [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => 'admin'] );
         $crawler = $client->request('GET', '/tasks/create');
         $form = $crawler->selectButton('Ajouter')->form();
         $form['task[title]'] = 'John Doe';
@@ -37,8 +37,23 @@ class TaskControllerTest extends WebTestCase
     }
     public function testEditAction()
     {
-        $client = static::createClient();
-        $client->request('GET', '/tasks/3/edit');
-        $this->assertEquals(302, $client->getResponse()->getStatusCode());
+        $client = static::createClient( [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => 'admin'] );
+        $crawler = $client->request('GET','/tasks');
+        $this->assertEquals(200,$client->getResponse()->getStatusCode());
+        $link = $crawler
+        ->filter('a:contains("by-annonymous")') // find all links with the text "Greet"
+        ->eq(1) // select the second link in the list
+        ->link()
+        ;
+        // and click it
+        $crawler = $client->click($link);
+        $form = $crawler->selectButton('Modifier')->form();
+        $form['task[title]'] = 'John Doe';
+        $form['task[content]'] = 'Plat de pâtes';
+        $client->submit($form);
+        $this->assertEquals(302,$client->getResponse()->getStatusCode());
+        $crawler = $client->followRedirect();
+        $this->assertSame(1, $crawler->filter('div.alert.alert-success')->count());
     }
+    
 }
