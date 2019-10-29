@@ -16,7 +16,7 @@ class DefaultControllerTest extends WebTestCase
     }
     public function testIndexAfetrLogin()
     {
-        $client = static::createClient( [], ['PHP_AUTH_USER' => 'samir123', 'PHP_AUTH_PW' => 'samir'] );
+        $client = static::createClient( [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => 'admin'] );
         $client->request( 'GET', '/');
         $this->assertFalse($client->getResponse()->isRedirect());
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
