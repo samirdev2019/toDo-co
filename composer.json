@@ -29,7 +29,8 @@
         "sensio/framework-extra-bundle": "^5.0.0",
         "incenteev/composer-parameter-handler": "^2.0",
         "phpunit/phpunit": "^8.4",
-        "twig/twig": "^1.0||^2.0"
+        "twig/twig": "^1.0||^2.0",
+        "doctrine/doctrine-fixtures-bundle": "^3.2"
 
     },
     
