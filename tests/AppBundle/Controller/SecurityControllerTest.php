@@ -17,8 +17,8 @@ class SecurityControllerTest extends WebTestCase
         $client = static::createClient();
         $crawler = $client->request('GET', '/login');
         $form = $crawler->selectButton('Se connecter')->form();
-        $form['_username'] = 'samir123';
-        $form['_password'] = 'samir';
+        $form['_username'] = 'admin';
+        $form['_password'] = 'admin';
         $crawler = $client->submit($form);
         $this->assertTrue($client->getResponse()->isRedirect());
         $client->followRedirect();       
@@ -30,8 +30,8 @@ class SecurityControllerTest extends WebTestCase
         $client = static::createClient();
         $crawler = $client->request('GET', '/login');
         $form = $crawler->selectButton('Se connecter')->form();
-        $form['_username'] = 'user';
-        $form['_password'] = 'admin';
+        $form['_username'] = 'invalidUsername';
+        $form['_password'] = 'invalidPassword';
         $crawler = $client->submit($form);
         $this->assertTrue($client->getResponse()->isRedirect());
         $crawler = $client->followRedirect(); 
