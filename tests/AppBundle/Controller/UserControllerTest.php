@@ -59,6 +59,7 @@ class UserControllerTest extends WebTestCase
     $form['user[username]'] = 'laurant';
     $form['user[password][first]'] = 'password1';
     $form['user[password][second]'] = 'password1';
+    $form['user[roles]'] = 'ROLE_ADMIN';
     $this->client->submit($form);
     $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
     $crawler = $this->client->followRedirect();

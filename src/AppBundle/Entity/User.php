@@ -150,20 +150,4 @@ class User implements UserInterface
         }
         return $this;
     }
-     /**
-     * This function allow to remove an task of this user collection(tasks)
-     *
-     * @param task $task
-     *
-     * @return self
-     */
-    public function removeTask(Task $task): self
-    {
-        if ($this->tasks->contains($task)) {
-            $this->tasks->removeElement($task);
-            if ($task->getUser() === $this) {
-                $task->setUser(null);
-            }
-        }
-    }
 }
