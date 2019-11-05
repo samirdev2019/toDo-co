@@ -24,7 +24,7 @@ class UserControllerTest extends WebTestCase
     $form['user[password][first]'] = 'password';
     $form['user[password][second]'] = 'password';
     $form['user[email]'] = 'kadour@email.com';
-    $form['user[roles]'] = 'ROLE_USER';
+    $form['user[role]'] = 'ROLE_USER';
     $this->client->submit($form);
     $crawler = $this->client->followRedirect();
     $this->assertTrue( $this->client->getResponse()->isSuccessful(), 'L\'utilisateur a bien été ajouté.' );
@@ -40,7 +40,7 @@ class UserControllerTest extends WebTestCase
     $form['user[password][first]'] = 'password1';
     $form['user[password][second]'] = 'password2';
     $form['user[email]'] = 'test@email.com';
-    $form['user[roles]'] = 'ROLE_USER';
+    $form['user[role]'] = 'ROLE_USER';
     $this->client->submit($form);
     $this->assertStringContainsString( 'Les deux mots de passe doivent correspondre.', $this->client->getResponse()->getContent() ); 
   }
@@ -59,7 +59,7 @@ class UserControllerTest extends WebTestCase
     $form['user[username]'] = 'laurant';
     $form['user[password][first]'] = 'password1';
     $form['user[password][second]'] = 'password1';
-    $form['user[roles]'] = 'ROLE_ADMIN';
+    $form['user[role]'] = 'ROLE_ADMIN';
     $this->client->submit($form);
     $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
     $crawler = $this->client->followRedirect();

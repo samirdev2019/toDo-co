@@ -1,0 +1,1973 @@
+PHPUnit 8.4.1 by Sebastian Bergmann and contributors.
+
+.                                                                   1 / 1 (100%)<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>To Do List app</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/css/shop-homepage.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <nav class="navbar navbar-light navbar-fixed-top" style="background-color: #e3f2fd;" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">To Do List app</a>
+
+                    <img src="/img/Logo_OpenClassrooms.png" alt="OpenClassrooms" />
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="container">
+            <div class="row">
+                <a href="/users/create" class="btn btn-primary">Créer un utilisateur</a>
+
+                                <a href="/logout" class="pull-right btn btn-danger">Se déconnecter</a>
+                
+                            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                                            <div class="alert alert-success" role="alert">
+                            <strong>Superbe !</strong> La tâche John Doe a bien été marquée comme faite.
+                        </div>
+                    
+                    
+                                        <img class="slide-image" src="/img/todolist_content.jpg" alt="todo list">                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-12">
+                        <a href="/tasks/create" class="btn btn-info pull-right">Créer une tâche</a>
+    <div class="row">
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/87/edit">Etancheur-bardeur by-ROLE_ADMIN</a></h4>
+                    <p>Ullam sit quia dolore molestiae.</p>
+                </div>
+                <div>
+                    <form action="/tasks/87/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/87/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/88/edit">Monteur-frigoriste by-ROLE_ADMIN</a></h4>
+                    <p>Repellendus occaecati nobis aliquam.</p>
+                </div>
+                <div>
+                    <form action="/tasks/88/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/88/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/89/edit">Chansonnier by-ROLE_ADMIN</a></h4>
+                    <p>Et sint veritatis tenetur qui dolores qui.</p>
+                </div>
+                <div>
+                    <form action="/tasks/89/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/89/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/90/edit">Aide-déménageur by-ROLE_ADMIN</a></h4>
+                    <p>Exercitationem et ut sed iure tenetur voluptates.</p>
+                </div>
+                <div>
+                    <form action="/tasks/90/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/90/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/91/edit">Pareur en abattoir by-ROLE_ADMIN</a></h4>
+                    <p>Fuga voluptatum sit reprehenderit velit sunt accusamus.</p>
+                </div>
+                <div>
+                    <form action="/tasks/91/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/91/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/92/edit">Scannériste by-ROLE_ADMIN</a></h4>
+                    <p>Sed est ducimus doloribus ullam odit.</p>
+                </div>
+                <div>
+                    <form action="/tasks/92/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/92/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/93/edit">Juriste financier by-ROLE_ADMIN</a></h4>
+                    <p>Necessitatibus culpa dolorum officia.</p>
+                </div>
+                <div>
+                    <form action="/tasks/93/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/93/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/94/edit">Chromiste by-ROLE_ADMIN</a></h4>
+                    <p>Aperiam exercitationem incidunt et suscipit.</p>
+                </div>
+                <div>
+                    <form action="/tasks/94/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/94/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/95/edit">Recuiseur by-ROLE_ADMIN</a></h4>
+                    <p>Accusantium voluptatum itaque praesentium ex rerum voluptates fugit.</p>
+                </div>
+                <div>
+                    <form action="/tasks/95/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/95/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/96/edit">Eleveur d&#039;insectes by-ROLE_ADMIN</a></h4>
+                    <p>Corporis quo est commodi eos autem.</p>
+                </div>
+                <div>
+                    <form action="/tasks/96/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/96/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/97/edit">Portier by-ROLE_ADMIN</a></h4>
+                    <p>Et quos quia et excepturi vitae.</p>
+                </div>
+                <div>
+                    <form action="/tasks/97/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/97/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/98/edit">Assurance by-ROLE_ADMIN</a></h4>
+                    <p>Corrupti dolorum quia sunt iste quia.</p>
+                </div>
+                <div>
+                    <form action="/tasks/98/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/98/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/99/edit">Commis de coupe by-ROLE_ADMIN</a></h4>
+                    <p>Explicabo at reiciendis nulla ut temporibus amet cum.</p>
+                </div>
+                <div>
+                    <form action="/tasks/99/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/99/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/100/edit">Chanteur by-ROLE_ADMIN</a></h4>
+                    <p>Eligendi nobis qui ea quibusdam.</p>
+                </div>
+                <div>
+                    <form action="/tasks/100/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/100/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/101/edit">Vendeur en lingerie by-ROLE_ADMIN</a></h4>
+                    <p>Eos et consectetur explicabo aspernatur dicta provident laborum.</p>
+                </div>
+                <div>
+                    <form action="/tasks/101/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/101/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/102/edit">Gendarme mobile by-ROLE_ADMIN</a></h4>
+                    <p>Odio nesciunt nisi doloremque est.</p>
+                </div>
+                <div>
+                    <form action="/tasks/102/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/102/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/103/edit">Détective by-ROLE_ADMIN</a></h4>
+                    <p>Voluptatem cum velit optio ex odio alias.</p>
+                </div>
+                <div>
+                    <form action="/tasks/103/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/103/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/104/edit">Ingénieur géologue by-ROLE_ADMIN</a></h4>
+                    <p>Cum iure perspiciatis et totam facilis.</p>
+                </div>
+                <div>
+                    <form action="/tasks/104/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/104/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/105/edit">Géomètre du cadastre by-ROLE_ADMIN</a></h4>
+                    <p>Explicabo aperiam minima ad.</p>
+                </div>
+                <div>
+                    <form action="/tasks/105/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/105/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/106/edit">Employé de snack-bar by-ROLE_ADMIN</a></h4>
+                    <p>Architecto exercitationem libero quae ut.</p>
+                </div>
+                <div>
+                    <form action="/tasks/106/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/106/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/107/edit">Manager d&#039;artiste by-ROLE_ADMIN</a></h4>
+                    <p>Incidunt optio doloribus optio commodi ea architecto accusantium.</p>
+                </div>
+                <div>
+                    <form action="/tasks/107/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/107/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/108/edit">Elagueur-grimpeur by-annonymous</a></h4>
+                    <p>Sed velit nobis in a temporibus.</p>
+                </div>
+                <div>
+                    <form action="/tasks/108/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/108/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/109/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/109/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/109/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/110/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/110/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/110/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/111/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/111/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/111/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/112/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/112/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/112/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/113/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/113/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/113/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/114/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/114/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/114/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/115/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/115/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/115/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/116/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/116/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/116/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/117/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/117/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/117/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/118/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/118/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/118/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/119/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/119/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/119/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/120/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/120/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/120/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/121/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/121/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/121/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/122/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/122/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/122/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/123/edit">Toiliste by-annonymous</a></h4>
+                    <p>Aut repellendus exercitationem recusandae quia.</p>
+                </div>
+                <div>
+                    <form action="/tasks/123/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/123/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/124/edit">Géologue prospecteur by-annonymous</a></h4>
+                    <p>Cumque quis magni neque.</p>
+                </div>
+                <div>
+                    <form action="/tasks/124/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/124/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/125/edit">Fromager by-annonymous</a></h4>
+                    <p>Aut facilis blanditiis perferendis provident amet.</p>
+                </div>
+                <div>
+                    <form action="/tasks/125/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/125/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/126/edit">Guitariste by-annonymous</a></h4>
+                    <p>Impedit quae ut veniam possimus eum natus.</p>
+                </div>
+                <div>
+                    <form action="/tasks/126/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/126/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/127/edit">Galeriste by-annonymous</a></h4>
+                    <p>Sapiente iure est a pariatur vero expedita.</p>
+                </div>
+                <div>
+                    <form action="/tasks/127/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/127/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/128/edit">Surjeteur-raseur by-annonymous</a></h4>
+                    <p>Quisquam atque et praesentium doloremque quia culpa.</p>
+                </div>
+                <div>
+                    <form action="/tasks/128/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/128/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/129/edit">Décorateur-costumier by-ROLE_USER</a></h4>
+                    <p>Qui consequatur non exercitationem saepe voluptatem maiores asperiores.</p>
+                </div>
+                <div>
+                    <form action="/tasks/129/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/129/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/130/edit">Praticien dentaire by-ROLE_USER</a></h4>
+                    <p>Rem suscipit saepe error nesciunt aliquam.</p>
+                </div>
+                <div>
+                    <form action="/tasks/130/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/130/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/131/edit">Chromiste by-ROLE_USER</a></h4>
+                    <p>Et laboriosam enim sed maxime.</p>
+                </div>
+                <div>
+                    <form action="/tasks/131/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/131/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/132/edit">Ambassadeur by-ROLE_USER</a></h4>
+                    <p>Repudiandae reiciendis molestiae sit exercitationem nam similique ipsa.</p>
+                </div>
+                <div>
+                    <form action="/tasks/132/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/132/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/133/edit">Animateur d&#039;écomusée by-ROLE_USER</a></h4>
+                    <p>Expedita repudiandae quis voluptas.</p>
+                </div>
+                <div>
+                    <form action="/tasks/133/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/133/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/134/edit">Assurance by-ROLE_USER</a></h4>
+                    <p>Id nesciunt et eum accusantium qui cumque harum.</p>
+                </div>
+                <div>
+                    <form action="/tasks/134/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/134/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/135/edit">Liftier by-ROLE_USER</a></h4>
+                    <p>Est consequatur deserunt fuga illum.</p>
+                </div>
+                <div>
+                    <form action="/tasks/135/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/135/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/136/edit">Façadier-bardeur by-ROLE_USER</a></h4>
+                    <p>Voluptatem dolor et quod repudiandae deserunt est est est.</p>
+                </div>
+                <div>
+                    <form action="/tasks/136/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/136/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/137/edit">Médiateur judiciaire by-ROLE_USER</a></h4>
+                    <p>Enim voluptates sed tempore est sit.</p>
+                </div>
+                <div>
+                    <form action="/tasks/137/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/137/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/138/edit">Pilote de soutireuse by-ROLE_USER</a></h4>
+                    <p>Non laboriosam et aut deserunt.</p>
+                </div>
+                <div>
+                    <form action="/tasks/138/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/138/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/139/edit">Professeur d&#039;italien by-ROLE_USER</a></h4>
+                    <p>Odit voluptas iure ut doloribus harum veniam accusantium.</p>
+                </div>
+                <div>
+                    <form action="/tasks/139/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/139/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/140/edit">Vendeur en épicerie by-ROLE_USER</a></h4>
+                    <p>Sapiente explicabo dolorem molestias est.</p>
+                </div>
+                <div>
+                    <form action="/tasks/140/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/140/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/141/edit">Feutier by-ROLE_USER</a></h4>
+                    <p>Hic possimus et expedita ex quos occaecati eaque.</p>
+                </div>
+                <div>
+                    <form action="/tasks/141/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/141/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/142/edit">Revenue Manager by-ROLE_USER</a></h4>
+                    <p>Ut vero aperiam inventore iure quia ut.</p>
+                </div>
+                <div>
+                    <form action="/tasks/142/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/142/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/143/edit">Facteur de clavecins by-ROLE_USER</a></h4>
+                    <p>Assumenda id molestiae sunt ut ut.</p>
+                </div>
+                <div>
+                    <form action="/tasks/143/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/143/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/144/edit">Contrebassiste by-ROLE_USER</a></h4>
+                    <p>Et laboriosam quis voluptate.</p>
+                </div>
+                <div>
+                    <form action="/tasks/144/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/144/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/145/edit">Hôte de caisse by-ROLE_USER</a></h4>
+                    <p>Occaecati est temporibus voluptatum excepturi sit.</p>
+                </div>
+                <div>
+                    <form action="/tasks/145/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/145/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/146/edit">Ingénieur halieute by-ROLE_USER</a></h4>
+                    <p>Iste corrupti aspernatur sunt impedit.</p>
+                </div>
+                <div>
+                    <form action="/tasks/146/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/146/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/147/edit">Posticheur spectacle by-ROLE_USER</a></h4>
+                    <p>Accusamus non earum dolorum quasi ullam nihil sunt.</p>
+                </div>
+                <div>
+                    <form action="/tasks/147/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/147/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/148/edit">Recuiseur by-ROLE_USER</a></h4>
+                    <p>Iure ipsum voluptas laborum impedit velit ratione ad.</p>
+                </div>
+                <div>
+                    <form action="/tasks/148/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/148/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/149/edit">Pilote automobile by-ROLE_USER</a></h4>
+                    <p>Dolore laboriosam velit non modi laboriosam voluptas rem.</p>
+                </div>
+                <div>
+                    <form action="/tasks/149/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/149/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/150/edit">Formateur d&#039;italien by-annonymous</a></h4>
+                    <p>Sed nostrum odio ipsam odit.</p>
+                </div>
+                <div>
+                    <form action="/tasks/150/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/150/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/151/edit">Sapeur-pompier by-annonymous</a></h4>
+                    <p>Eligendi quis repellat ea sit ipsum sit.</p>
+                </div>
+                <div>
+                    <form action="/tasks/151/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/151/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/152/edit">Bûcheron by-annonymous</a></h4>
+                    <p>Ea dolorem quidem error in nulla rerum incidunt est.</p>
+                </div>
+                <div>
+                    <form action="/tasks/152/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/152/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/153/edit">Diététicien conseil by-annonymous</a></h4>
+                    <p>Atque laboriosam esse modi laudantium numquam tempora minus rerum.</p>
+                </div>
+                <div>
+                    <form action="/tasks/153/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/153/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/154/edit">Médecin du sport by-annonymous</a></h4>
+                    <p>Ea esse at et officia.</p>
+                </div>
+                <div>
+                    <form action="/tasks/154/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/154/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/155/edit">Rippeur spectacle by-annonymous</a></h4>
+                    <p>Eos distinctio in sit.</p>
+                </div>
+                <div>
+                    <form action="/tasks/155/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/155/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/156/edit">Bruiteur by-annonymous</a></h4>
+                    <p>Aut est perspiciatis atque architecto quasi.</p>
+                </div>
+                <div>
+                    <form action="/tasks/156/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/156/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/157/edit">Trieur de métaux by-annonymous</a></h4>
+                    <p>Aut doloribus illum nobis neque corporis quisquam.</p>
+                </div>
+                <div>
+                    <form action="/tasks/157/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/157/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/158/edit">Plaquiste enduiseur by-annonymous</a></h4>
+                    <p>Non voluptatem consectetur consequatur aliquid tempore asperiores.</p>
+                </div>
+                <div>
+                    <form action="/tasks/158/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/158/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/159/edit">Tôlier-traceur by-annonymous</a></h4>
+                    <p>Dolore et aut nihil fugit aut.</p>
+                </div>
+                <div>
+                    <form action="/tasks/159/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/159/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/160/edit">Primeuriste by-annonymous</a></h4>
+                    <p>Et officiis quis est delectus ea consequuntur sed.</p>
+                </div>
+                <div>
+                    <form action="/tasks/160/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/160/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/161/edit">Frigoriste maritime by-annonymous</a></h4>
+                    <p>Tempora ab aut qui soluta consectetur ipsam.</p>
+                </div>
+                <div>
+                    <form action="/tasks/161/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/161/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/162/edit">Logistique by-annonymous</a></h4>
+                    <p>Omnis officiis dolorem ad aliquid maxime atque.</p>
+                </div>
+                <div>
+                    <form action="/tasks/162/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/162/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/163/edit">Ouvrier sidérurgiste by-annonymous</a></h4>
+                    <p>Necessitatibus quasi et dolor voluptas.</p>
+                </div>
+                <div>
+                    <form action="/tasks/163/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/163/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/164/edit">Chansonnier by-annonymous</a></h4>
+                    <p>Quo soluta sunt cupiditate cum error numquam.</p>
+                </div>
+                <div>
+                    <form action="/tasks/164/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/164/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/165/edit">Ramasseur d&#039;asperges by-annonymous</a></h4>
+                    <p>Ut nobis dolorem est enim.</p>
+                </div>
+                <div>
+                    <form action="/tasks/165/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/165/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/166/edit">Formateur d&#039;italien by-annonymous</a></h4>
+                    <p>Excepturi sint est harum maxime esse recusandae ipsa.</p>
+                </div>
+                <div>
+                    <form action="/tasks/166/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/166/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/167/edit">Relieur-doreur by-annonymous</a></h4>
+                    <p>Itaque officiis quia quia ea incidunt ex labore.</p>
+                </div>
+                <div>
+                    <form action="/tasks/167/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/167/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/168/edit">Dégustateur by-annonymous</a></h4>
+                    <p>Sint ipsum autem qui sit impedit.</p>
+                </div>
+                <div>
+                    <form action="/tasks/168/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/168/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/169/edit">Décorateur-costumier by-annonymous</a></h4>
+                    <p>Sed dignissimos quas aut perspiciatis laboriosam voluptatum modi.</p>
+                </div>
+                <div>
+                    <form action="/tasks/169/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/169/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/170/edit">Vidéo-jockey by-annonymous</a></h4>
+                    <p>Dolor expedita repudiandae quis aspernatur.</p>
+                </div>
+                <div>
+                    <form action="/tasks/170/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/170/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/171/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/171/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/171/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/172/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/172/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/172/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/173/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/173/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/173/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/174/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/174/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/174/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/175/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/175/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/175/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/176/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/176/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/176/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/177/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/177/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/177/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/178/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/178/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/178/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/179/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/179/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/179/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/180/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/180/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/180/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/181/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/181/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/181/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/182/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/182/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/182/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>                    </h4>
+                    <h4><a href="/tasks/183/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/183/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer comme faite                        </button>
+                    </form>
+                    <form action="/tasks/183/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-ok"></span>                    </h4>
+                    <h4><a href="/tasks/184/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/184/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer non terminée                        </button>
+                    </form>
+                    <form action="/tasks/184/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="pull-right">
+                        <span class="glyphicon glyphicon-ok"></span>                    </h4>
+                    <h4><a href="/tasks/185/edit">John Doe</a></h4>
+                    <p>Plat de pâtes</p>
+                </div>
+                <div>
+                    <form action="/tasks/185/toggle">
+                        <button class="btn btn-success btn-sm pull-right">
+                            Marquer non terminée                        </button>
+                    </form>
+                    <form action="/tasks/185/delete">
+                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+            </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+
+        <div class="container">
+
+            <hr>
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="pull-right">Copyright &copy; OpenClassrooms</p>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+        <script src="/js/jquery.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+    </body>
+</html>
+
+
+Time: 1.49 seconds, Memory: 22.00 MB
+
+[30;42mOK (1 test, 2 assertions)[0m

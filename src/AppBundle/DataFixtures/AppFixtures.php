@@ -6,7 +6,12 @@ use AppBundle\Entity\User;
 use Doctrine\Bundle\FixturesBundle\ORMFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use PHPUnit\Framework\TestCase;
 
+/**
+ * @codeCoverageIgnore
+ * 
+ */
 class AppFixtures implements ORMFixtureInterface
 {
     private $encoder;
@@ -14,12 +19,19 @@ class AppFixtures implements ORMFixtureInterface
      * The constructor class with intialisation of UserPasswordEncoderInterface
      *
      * @param UserPasswordEncoderInterface $encoder
+     * @codeCoverageIgnore
      */
     public function __construct(UserPasswordEncoderInterface $encoder)
     {
         $this->encoder = $encoder;
     }
-
+    /**
+     * Undocumented function
+     *
+     * @param ObjectManager $manager
+     * @return void
+     * @codeCoverageIgnore
+     */
     public function load(ObjectManager $manager)
     {
         $faker = \Faker\Factory::create('fr_FR');
@@ -32,7 +44,7 @@ class AppFixtures implements ORMFixtureInterface
             
             $user->setUsername($username[$i]);
             $user->setEmail($faker->email);
-            $user->setRoles([$roles[$i]]);
+            $user->setRole($roles[$i]);
             $password = $this->encoder->encodePassword($user, 'admin');
             $user->setPassword($password);
             $manager->persist($user);

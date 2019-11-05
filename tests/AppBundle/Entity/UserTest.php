@@ -39,9 +39,10 @@ class UserTest extends TestCase
         $this->user->setEmail('test@email.com');
         $this->assertEquals($this->user->getEmail(),'test@email.com');
     }
-    public function testSetGetRoles()
+    public function testSetGetRole()
     {
-        $this->user->setRoles(['ROLE_ADMIN','ROLE_USER']);
+        $this->user->setRole('ROLE_ADMIN');
+        $this->assertEquals($this->user->getRole(),'ROLE_ADMIN');
         $this->assertEquals($this->user->getRoles(),['ROLE_ADMIN','ROLE_USER']);
     }
    

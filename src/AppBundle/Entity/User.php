@@ -48,9 +48,9 @@ class User implements UserInterface
      */
     private $tasks;
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="string", length=50)
      */
-    private $roles;
+    private $role;
 
     public function __construct()
     {
@@ -104,11 +104,15 @@ class User implements UserInterface
      */
     public function getRoles()
     {
-        $roles = $this->roles;
+        $roles [] = $this->role;
         // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
 
     return array_unique($roles);
+    }
+    public function getRole()
+    {
+        return $this->role;
     }
     /**
      * This setter function allows to attribute the role to a user
@@ -116,9 +120,9 @@ class User implements UserInterface
      * @param array $roles
      * @return self
      */
-    public function setRoles(array $roles): self
+    public function setRole(string $role): self
     {
-        $this->roles = $roles;
+        $this->role = $role;
 
         return $this;
     }

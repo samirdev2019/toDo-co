@@ -22,16 +22,27 @@ class UserType extends AbstractType
                 'required' => true,
                 'first_options'  => ['label' => 'Mot de passe'],
                 'second_options' => ['label' => 'Tapez le mot de passe à nouveau'],
+                'first_name' => 'first',
+                'second_name' => 'second',
             ])
             ->add('email', EmailType::class, ['label' => 'Adresse email'])
-            ->add( 'roles', ChoiceType::class, [
-                'label' => 'rôles :',
-                'choices' => array(
-                    'Administrateur' => 'ROLE_ADMIN',
+            // ->add( 'roles', ChoiceType::class, [
+            //     'label' => 'rôles :',
+            //     'choices' => [
+            //         'Administrateur' => 'ROLE_ADMIN',
+            //         'Utilisateur' => 'ROLE_USER',
+            //     ],
+            //     'multiple' => true,
+                
+            // ] )
+            ->add('role', ChoiceType::class, [
+                'choices'  => [
+                    'administrateur' => 'ROLE_ADMIN',
                     'Utilisateur' => 'ROLE_USER',
-                ),
-                'multiple' => true
-            ] )
+                    
+                ],
+                'multiple' => false,
+            ]);
         ;
     }
 }

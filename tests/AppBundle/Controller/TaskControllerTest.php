@@ -7,7 +7,8 @@ class TaskControllerTest extends WebTestCase
 {   
     
     public function testTaskList()
-    {
+    { 
+        
         $client = static::createClient( [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => 'admin'] );
         $client->request( 'GET', '/check_login' );
         $crawler = $client->request( 'GET', '/', [], [], [
@@ -34,6 +35,21 @@ class TaskControllerTest extends WebTestCase
         $crawler = $client->followRedirect();
         //echo $client->getResponse()->getContent();
         $this->assertSame(1, $crawler->filter('div.alert.alert-success')->count());
+        //delete 
+        $form = $crawler->selectButton("Supprimer")->last()->form();
+        $client->submit($form);
+        $crawler = $client->followRedirect();
+        $this->assertEquals(200,$client->getResponse()->getStatusCode());
+    }
+    public function testDeleteTaskAdminRole()
+    {
+        $client = static::createClient( [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => 'admin'] );
+        $crawler = $client->request('GET','/tasks');
+        $form = $crawler->selectButton("Supprimer")->last()->form();
+        $client->submit($form);
+        $crawler = $client->followRedirect();
+        $this->assertEquals(200,$client->getResponse()->getStatusCode());
+        $this->assertSame(1, $crawler->filter('div.alert.alert-success:contains("Superbe ! La tâche a bien été supprimée.")')->count());
     }
     public function testEditAction()
     {
@@ -55,16 +71,21 @@ class TaskControllerTest extends WebTestCase
         $crawler = $client->followRedirect();
         $this->assertSame(1, $crawler->filter('div.alert.alert-success')->count());
     }
-    public function testDeleteTaskAction()
+    
+    public function testDeleteTaskUserRole()
     {
-        $client = static::createClient( [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => 'admin'] );
+        $client = static::createClient( [], ['PHP_AUTH_USER' => 'user', 'PHP_AUTH_PW' => 'admin'] );
         $crawler = $client->request('GET','/tasks');
         $form = $crawler->selectButton("Supprimer")->last()->form();
         $client->submit($form);
-        $crawler = $client->followRedirect();
-        $this->assertEquals(200,$client->getResponse()->getStatusCode());
-        $this->assertSame(1, $crawler->filter('div.alert.alert-success:contains("Superbe ! La tâche a bien été supprimée.")')->count());
+        $this->assertEquals(403,$client->getResponse()->getStatusCode());
     }
+    // public function testDeleteTaskAttachedToAnnonymous()
+    // {
+    //     $client = static::createClient( [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => 'admin'] );
+    //     $crawler = $client->request('GET',' /tasks/209/delete');
+    //     $this->assertEquals(403,$client->getResponse()->getStatusCode());
+    // }
     public function testToggleTaskAction()
     {
         $client = static::createClient( [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => 'admin'] );
@@ -74,5 +95,5 @@ class TaskControllerTest extends WebTestCase
         $crawler = $client->followRedirect();
         $this->assertEquals(200,$client->getResponse()->getStatusCode());
         $this->assertSame(1, $crawler->filter('div.alert.alert-success:contains("a bien été marquée comme faite.")')->count());
-    }
+     }
 }
