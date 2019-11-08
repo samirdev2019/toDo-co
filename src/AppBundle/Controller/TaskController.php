@@ -23,6 +23,7 @@ class TaskController extends Controller
      */
     public function createAction(Request $request)
     {
+        
         $task = new Task();
         $form = $this->createForm(TaskType::class, $task);
 
@@ -30,10 +31,11 @@ class TaskController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-
+            /* 1. correction d'annomalie: automatiquement, à la sauvegarde de la tâche,
+             l’utilisateur actuellement authentifié soit rattaché à la tâche nouvellement créée. */
+            $task->setUser($this->getUser());
             $em->persist($task);
             $em->flush();
-
             $this->addFlash('success', 'La tâche a été bien été ajoutée.');
 
             return $this->redirectToRoute('task_list');
@@ -83,6 +85,7 @@ class TaskController extends Controller
      */
     public function deleteTaskAction(Task $task)
     {
+        $this->denyAccessUnlessGranted('delete', $task);
         $em = $this->getDoctrine()->getManager();
         $em->remove($task);
         $em->flush();
