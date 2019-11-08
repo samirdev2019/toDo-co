@@ -38,10 +38,8 @@ class AppFixtures implements ORMFixtureInterface
         $faker = \Faker\Factory::create('fr_FR');
         $username = ['admin','user'];
         $roles = ['ROLE_ADMIN','ROLE_USER'];
-        
         for ($i=0; $i<=1; $i++) {
             $user = new User();
-            
             $user->setUsername($username[$i]);
             $user->setEmail($faker->email);
             $user->setRole($roles[$i]);
