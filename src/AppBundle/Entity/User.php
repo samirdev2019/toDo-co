@@ -1,5 +1,15 @@
 <?php
-
+/**
+ * The User file doc comment
+ *
+ * PHP version 7.2.10
+ *
+ * @category Class
+ * @package  User
+ * @author   Samir,sarah <allabsamir666@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     src/AppBundle/Entity/User.php
+ */
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -9,6 +19,14 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
+ * The Entity class of User
+ *
+ * @category Class
+ * @package  User
+ * @author   Samir,sarah <allabsamir666@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     src/AppBundle/Entity/User.php
+ *
  * @ORM\Table("user")
  * @ORM\Entity
  * @UniqueEntity("email")
@@ -49,49 +67,88 @@ class User implements UserInterface
     private $tasks;
     /**
      * @ORM\Column(type="string", length=50)
+     *
+     * @var string the user role
      */
     private $role;
-
+    /**
+     * Initialization of the tasks like as array collection in the constructor
+     */
     public function __construct()
     {
         $this->tasks = new ArrayCollection();
     }
-
-    public function getId()
+    /**
+     * The id getter
+     *
+     * @return int the user identifier
+     */
+    public function getId(): ?int
     {
         return $this->id;
     }
-
-    public function getUsername()
+    /**
+     * The username gettter
+     *
+     * @return null|string
+     */
+    public function getUsername(): ?string
     {
         return $this->username;
     }
-
+    /**
+     * The username setter
+     *
+     * @param string $username
+     * @return void
+     */
     public function setUsername($username)
     {
         $this->username = $username;
     }
-
+    /**
+     * the getSalt method of UserInterface
+     *
+     * @return null
+     */
     public function getSalt()
     {
         return null;
     }
-
+    /**
+     * The getter of password
+     *
+     * @return string
+     */
     public function getPassword()
     {
         return $this->password;
     }
-
+    /**
+     * The setter of password
+     *
+     * @param string $password
+     * @return void
+     */
     public function setPassword($password)
     {
         $this->password = $password;
     }
-
+    /**
+     * Email getter
+     *
+     * @return string
+     */
     public function getEmail()
     {
         return $this->email;
     }
-
+    /**
+     * Email setter
+     *
+     * @param string $email
+     * @return void
+     */
     public function setEmail($email)
     {
         $this->email = $email;
@@ -100,7 +157,7 @@ class User implements UserInterface
      * This getter role function is modified before the users have ROLE_USER AUTOMATICALLY
      *  now user can have also their roles from database.
      *
-     * @return array
+     * @return array of roles user
      */
     public function getRoles()
     {
@@ -110,6 +167,11 @@ class User implements UserInterface
 
         return array_unique($roles);
     }
+    /**
+     * The role user getter
+     *
+     * @return string
+     */
     public function getRole()
     {
         return $this->role;
@@ -126,7 +188,11 @@ class User implements UserInterface
 
         return $this;
     }
-
+    /**
+     * This function is defined in UserInterface
+     *
+     * @return void
+     */
     public function eraseCredentials()
     {
     }

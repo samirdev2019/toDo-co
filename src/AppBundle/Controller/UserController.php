@@ -35,7 +35,7 @@ class UserController extends Controller
      * @Route("/users", name="user_list")
      * @return Response a template twig listing users
      */
-    public function listAction()
+    public function listUser()
     {
         return $this->render(
             'user/list.html.twig',
@@ -51,7 +51,7 @@ class UserController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function createAction(Request $request)
+    public function createUser(Request $request)
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
@@ -82,7 +82,7 @@ class UserController extends Controller
      * @param Request $request
      * @return Response format html
      */
-    public function editAction(User $user, Request $request)
+    public function editUser(User $user, Request $request)
     {
         $form = $this->createForm(UserType::class, $user);
 

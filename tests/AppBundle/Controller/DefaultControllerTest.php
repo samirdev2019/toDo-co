@@ -1,9 +1,26 @@
 <?php
-
+/**
+ * The DefaultControllerTest file doc comment
+ *
+ * PHP version 7.2.10
+ *
+ * @category ClassTest
+ * @package  DefaultControllerTest
+ * @author   Samir <allabsamir666@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     Tests/AppBundle/Controller/DefaultControllerTest.php
+ */
 namespace Tests\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
+/**
+ * @category FunctionalTest
+ * @package  DefaultControllerTest
+ * @author   Samir <allabsamir666@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     Tests/AppBundle/Controller/DefaultControllerTest.php
+ */
 class DefaultControllerTest extends WebTestCase
 {
     /**

@@ -1,5 +1,15 @@
 <?php
-
+/**
+ * The UserType file doc comment
+ *
+ * PHP version 7.2.10
+ *
+ * @category Class
+ * @package  UserType
+ * @author   Samir,sarah <allabsamir666@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     src/AppBundle/Form/UserType.php
+ */
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
@@ -10,8 +20,24 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
+/**
+ * @category Class
+ * @package  UserType
+ * @author   Samir,sarah <allabsamir666@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     src/AppBundle/Form/UserType.php
+ */
 class UserType extends AbstractType
 {
+    /**
+     * The select drop-downs has been added to allow When creating
+     *  a user, it must be possible to choose a role for it.
+     *  The roles listed are as follows: Role admin, Role user
+     *
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     * @return void
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder

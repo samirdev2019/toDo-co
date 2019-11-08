@@ -1,19 +1,44 @@
 <?php
-
+/**
+ * The SecurityControllerTest file doc comment
+ *
+ * PHP version 7.2.10
+ *
+ * @category FunctionalTest
+ * @package  SecurityControllerTest
+ * @author   Samir <allabsamir666@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     Tests/AppBundle/Controller/SecurityControllerTest.php
+ */
 namespace Tests\AppBundle\Controller;
 
 use AppBundle\Entity\User;
 use AppBundle\Controller\SecurityController;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
+/**
+ * @category ClassTest
+ * @package  SecurityControllerTest
+ * @author   Samir <allabsamir666@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     Tests/AppBundle/Controller/SecurityControllerTest.php
+ */
 class SecurityControllerTest extends WebTestCase
 {
+    /**
+     * @var SecurityController
+     */
     protected $controller;
     public function setUp():void
     {
         $this->controller = new SecurityController();
     }
-    public function testLoginActionValidCredentials()
+    /**
+     * This method tests the authentication with valid credentials
+     *
+     * @return void
+     */
+    public function testLoginWithValidCredentials()
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/login');
@@ -29,7 +54,12 @@ class SecurityControllerTest extends WebTestCase
             $client->getResponse()->getContent()
         );
     }
-    public function testLoginActionInvalideCredentials()
+    /**
+     * This method tests the authentication with invalid credentials
+     *
+     * @return void
+     */
+    public function testLoginwithInvalideCredentials()
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/login');
@@ -42,14 +72,24 @@ class SecurityControllerTest extends WebTestCase
         $this->assertSame(1, $crawler->filter('div.alert.alert-danger:contains("Invalid credentials.")')->count());
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
+    /**
+     * Tests the loginChek method
+     *
+     * @return void
+     */
     public function testLoginCheck()
     {
         $check = $this->controller->loginCheck();
         self::assertNull($check);
     }
+    /**
+     * Tests the logout method
+     *
+     * @return void
+     */
     public function testLogout()
     {
-        $check = $this->controller->logoutCheck();
+        $check = $this->controller->logout();
         self::assertNull($check);
     }
 }

@@ -1,4 +1,15 @@
 <?php
+/**
+ * The UserTypeTest file doc comment
+ *
+ * PHP version 7.2.10
+ *
+ * @category ClassTest
+ * @package  UserTypeTest
+ * @author   Samir <allabsamir666@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     Tests/AppBundle/Form/UserTypeTest.php
+ */
 namespace Tests\AppBundle\Form;
 
 use AppBundle\Entity\User;
@@ -9,6 +20,13 @@ use Symfony\Component\Validator\Validation;
 use Symfony\Component\Form\Extension\Validator\ValidatorExtension;
 use Symfony\Component\Form\Test\TypeTestCase;
 
+/**
+ * @category ClassTest
+ * @package  UserTypeTest
+ * @author   Samir <allabsamir666@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     Tests/AppBundle/Form/UserTypeTest.php
+ */
 class UserTypeTest extends TypeTestCase
 {
     /**
@@ -23,7 +41,11 @@ class UserTypeTest extends TypeTestCase
             new ValidatorExtension($validator),
         ];
     }
-    
+    /**
+     * tests the User creation form with valid information including user role
+     *
+     * @return void
+     */
     public function testSubmitUserValidData()
     {
        

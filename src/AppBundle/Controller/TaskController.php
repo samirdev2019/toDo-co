@@ -34,7 +34,7 @@ class TaskController extends Controller
      *
      * @Route("/tasks", name="task_list")
      */
-    public function listAction()
+    public function listTask()
     {
         return $this->render(
             'task/list.html.twig',
@@ -51,7 +51,7 @@ class TaskController extends Controller
      * @param Request $request
      * @return void
      */
-    public function createAction(Request $request)
+    public function createTask(Request $request)
     {
         
         $task = new Task();
@@ -83,7 +83,7 @@ class TaskController extends Controller
      * @param Request $request
      * @return void
      */
-    public function editAction(Task $task, Request $request)
+    public function editTask(Task $task, Request $request)
     {
         $form = $this->createForm(TaskType::class, $task);
 
@@ -110,7 +110,7 @@ class TaskController extends Controller
      * @param Task $task
      * @return void
      */
-    public function toggleTaskAction(Task $task)
+    public function toggleTask(Task $task)
     {
         $task->toggle(!$task->isDone());
         $this->getDoctrine()->getManager()->flush();
@@ -127,7 +127,7 @@ class TaskController extends Controller
      * @param Task $task
      * @return void
      */
-    public function deleteTaskAction(Task $task)
+    public function deleteTask(Task $task)
     {
         $this->denyAccessUnlessGranted('delete', $task);
         $em = $this->getDoctrine()->getManager();

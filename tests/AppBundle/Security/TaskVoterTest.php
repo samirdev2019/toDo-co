@@ -1,5 +1,15 @@
 <?php
-
+/**
+ * The TaskVoterTest file doc comment
+ *
+ * PHP version 7.2.10
+ *
+ * @category ClassTest
+ * @package  TaskVoterTest
+ * @author   Samir <allabsamir666@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     Tests/AppBundle/Security/TaskVoterTest.php
+ */
 namespace Tests\AppBundle\Entity;
 
 use AppBundle\Entity\Task;
@@ -14,8 +24,18 @@ use Symfony\Component\Security\Core\Authorization\AccessDecisionManager;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;
 
+/**
+ * @category ClassTest
+ * @package  TaskVoterTest
+ * @author   Samir <allabsamir666@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     Tests/AppBundle/Security/TaskVoterTest.php
+ */
 class TaskVoterTest extends TestCase
 {
+    /**
+     * @var object instance of AccessDecisionManagerInterface
+     */
     private $decisionManager;
 
 
@@ -23,12 +43,24 @@ class TaskVoterTest extends TestCase
     {
         $this->decisionManager = $this->CreateMock(AccessDecisionManagerInterface::class);
     }
+    /**
+     * Method allows to create a mock of User
+     *
+     * @param array|null $roles
+     * @return User
+     */
     private function createUser(?array $roles):User
     {
         $user = $this->createMock(User::class);
         $user->method('getRoles')->willReturn($roles);
         return $user;
     }
+    /**
+     * Method allows to create a mock of Task
+     *
+     * @param User|null $user
+     * @return Task|null
+     */
     private function createTask(?User $user): ?Task
     {
         $task = $this->createMock(Task::class);
@@ -50,7 +82,9 @@ class TaskVoterTest extends TestCase
         
         $this->assertEquals($expected, $voter->vote($tokenMock, $subject, [$attribute]));
     }
-    
+    /**
+     * test data used by the method testVote
+     */
     public function provideTestVoteData()
     {
         $user = $this->createMock(User::class);
