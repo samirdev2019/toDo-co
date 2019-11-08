@@ -26,7 +26,7 @@ class TaskVoter extends Voter
                && in_array($attribute, self::ATTRIBUTES);
     }
 
-    protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
+    public function voteOnAttribute($attribute, $subject, TokenInterface $token)
     {
         $user = $token->getUser();
         if (!$user instanceof User) {
@@ -41,14 +41,9 @@ class TaskVoter extends Voter
             if ($this->decisionManager->decide($token, ['ROLE_ADMIN'])) {
                 // if user have ROLE_ADMIN then he is autorised to delete tasks attached to annonymous users
                 return true;
-            }
-            return false;
+            }   
         }
         
-        // if ($attribute === self::DELETE) {
-        //     return $this->canDelete($task, $user);
-        // }
-       
         switch ($attribute) {
             case self::DELETE:
                 return $this->isOwner($task,$user);
@@ -60,6 +55,5 @@ class TaskVoter extends Voter
     {
         // if they owners of task they can delete
         return $user === $task->getUser();
-        //return $user->getId() === $task->getUser()->getId();
     }
 }

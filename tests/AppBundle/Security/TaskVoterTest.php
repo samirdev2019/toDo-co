@@ -14,30 +14,20 @@ use Symfony\Component\Security\Core\Authorization\AccessDecisionManager;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;
 
+
 class TaskVoterTest extends TestCase
 {
-    private $admin;
-    private $user;
     private $decisionManager;
-    public function setUp():void
-    {
-        $this->admin = new User();
-        $this->admin->setRole('ROLE_ADMIN');
-        $this->user = new User();
-        $this->user->setRole('ROLE_USER');
-        //$this->user1 = $this->$this->createUser(1,['ROLE_USER']);
-        
-        $this->decisionManager = $this->CreateMock(AccessDecisionManagerInterface::class);
-        $this->decisionManager->method('decide')->willReturn(true);
-    
-    }
 
-    private function createUser(int $id, ?array $roles):User
+
+    public function setUp():void 
+    {
+        $this->decisionManager = $this->CreateMock(AccessDecisionManagerInterface::class);
+    }
+    private function createUser(?array $roles):User
     {
         $user = $this->createMock(User::class);
-        $user->method('getId')->willReturn($id);
         $user->method('getRoles')->willReturn($roles);
-
         return $user;
         
     } 
@@ -48,82 +38,58 @@ class TaskVoterTest extends TestCase
         return $task;
         //$this->task = $task;
     } 
-    public function createToken(?User $user)
-    {
-        $token = $this->CreateMock(TokenInterface::class);
-        $token->method('getUser')->willReturn($user);
-        $token->method('isAuthenticated')->willReturn(true);
-        $token->method('getAttribute')->willReturn('delete');
-        //$token->method('getRoles')->willReturn($user->getRoles());
-        return $token;
-    }
-    public function provideCases()
-    { 
-        //$user = $this->createUser(1, ['ROLE_USER']);
-        
-        yield 'owner can delete' => [
-            'delete',
-            $this->createTask($this->admin),
-            $this->admin,
-            //Voter::ACCESS_DENIED
-            Voter::ACCESS_GRANTED
-        ];
-        
-    }   
-    
+
     /**
-     * @dataProvider provideCases
+     * @dataProvider provideTestVoteData
      */
-    public function testVote(
-        string $attribute,
-        Task $task,
-        ?User $user,
-        $expectedVote
-    ) {
-        $voter = new TaskVoter($this->decisionManager);
-        //$token = new AnonymousToken('secret', 'anonymous');
-        $token = $this->createToken(null);
-        if ($user) {
-            $token = $this->createToken($user);
-        }
-
-        $this->assertSame(
-            $expectedVote,
-            $voter->vote($token, $task, [$attribute])
-        );
-       
-    }   
-    public function testAnnonymousUser()
+    public function testVote($attribute, $subject, $user, $expected) 
     {
-        $task = new Task();
-        $attribute = 'delete';
-
-        $token = $this->CreateMock(TokenInterface::class);
-        $token->method('getUser')->willReturn(null);
-        $token->method('isAuthenticated')->willReturn(true);
-        $token->method('getAttribute')->willReturn('delete');
+        $this->decisionManager->method('decide')->willReturn(true);
         $voter = new TaskVoter($this->decisionManager);
-        $this->assertSame(
-            Voter::ACCESS_DENIED,
-            $voter->vote($token, $task, [$attribute])
-        );
-    } 
-    public function testThrowException()
+
+        $tokenMock = $this->CreateMock(TokenInterface::class);
+        $tokenMock->method('getUser')->willReturn($user);
+        
+        $this->assertEquals($expected, $voter->vote($tokenMock, $subject, [$attribute]));
+    }
+    
+    public function provideTestVoteData()
     {
-        $voter = $this
-            ->getMockBuilder('JMS\Serializer\Serializer')
-            ->disableOriginalConstructor()
-            ->method('voteOnAttribute')->will($this->throwException(new Exception))
-             
-            ->getMock();
+        $user = $this->createMock(User::class);
+        $task = $this->createMock(Task::class);
+        $task->method('getUser')->willReturn($user);
         
-
-        // $stub->doSomething() throws Exception
-        $voter->voteOnAttribute();
-    }   
-        
-   
-
-  
-
+        return [
+            'user can delete his task' => [
+                'delete',
+                $task,
+                $user,
+                VoterInterface::ACCESS_GRANTED,
+            ],
+            'voter attribute different to delete' => [
+                'delete2',
+                $task,
+                $user,
+                VoterInterface::ACCESS_ABSTAIN,
+            ],
+            'diffrente user on delete' => [
+                'delete',
+                $task,
+                $this->createMock(User::class),
+                VoterInterface::ACCESS_DENIED,
+            ],
+            'annonymous user cant delete' => [
+                'delete',
+                $task,
+                null,
+                VoterInterface::ACCESS_DENIED,
+            ],
+            'admin can delete annonymous task' => [
+                'delete',
+                $this->createTask(null),
+                $this->createUser(['ROLE_ADMIN']),
+                VoterInterface::ACCESS_GRANTED,
+            ],
+        ];
+    }
 }
