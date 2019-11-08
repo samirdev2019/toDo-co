@@ -98,7 +98,7 @@ class User implements UserInterface
     }
     /**
      * This getter role function is modified before the users have ROLE_USER AUTOMATICALLY
-     *  now user can have also their roles from database. 
+     *  now user can have also their roles from database.
      *
      * @return array
      */
@@ -108,7 +108,7 @@ class User implements UserInterface
         // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
 
-    return array_unique($roles);
+        return array_unique($roles);
     }
     public function getRole()
     {
@@ -131,7 +131,7 @@ class User implements UserInterface
     {
     }
     /**
-     * The getter of taks 
+     * The getter of taks
      *
      * @return mixed
      */

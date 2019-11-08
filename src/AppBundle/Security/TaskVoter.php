@@ -22,7 +22,7 @@ class TaskVoter extends Voter
     }
     protected function supports($attribute, $subject)
     {
-        return $subject instanceof Task 
+        return $subject instanceof Task
                && in_array($attribute, self::ATTRIBUTES);
     }
 
@@ -37,16 +37,16 @@ class TaskVoter extends Voter
         // $subject is a task object, thanks to supports
         /** @var Task $task */
         $task = $subject;
-        if(null === $task->getUser()) {
+        if (null === $task->getUser()) {
             if ($this->decisionManager->decide($token, ['ROLE_ADMIN'])) {
                 // if user have ROLE_ADMIN then he is autorised to delete tasks attached to annonymous users
                 return true;
-            }   
+            }
         }
         
         switch ($attribute) {
             case self::DELETE:
-                return $this->isOwner($task,$user);
+                return $this->isOwner($task, $user);
         }
         throw new \LogicException('This code should not be reached!');
     }

@@ -1,9 +1,11 @@
 <?php
 
 namespace Tests\AppBundle\Entity;
+
 use AppBundle\Entity\Task;
 use AppBundle\Entity\User;
 use PHPUnit\Framework\TestCase;
+
 /**
  * @test unit class task
  */
@@ -34,16 +36,15 @@ class TaskTest extends TestCase
     public function testGetUser()
     {
         $this->task->setUser($this->user);
-        $this->assertInstanceOf(User::class,$this->task->getUser());
+        $this->assertInstanceOf(User::class, $this->task->getUser());
     }
-    
     /**
      * @test
      */
     public function testGetContent()
     {
         $this->task->setContent('Content teste task');
-        $this->assertEquals($this->task->getContent(),'Content teste task');
+        $this->assertEquals($this->task->getContent(), 'Content teste task');
     }
     /**
      * @test
@@ -51,6 +52,6 @@ class TaskTest extends TestCase
     public function testGetCreatedAt()
     {
         $this->task->setCreatedAt($this->createdAt);
-        $this->assertInstanceOf(\DateTime::class,$this->task->getCreatedAt());
+        $this->assertInstanceOf(\DateTime::class, $this->task->getCreatedAt());
     }
 }

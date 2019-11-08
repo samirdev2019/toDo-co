@@ -39,7 +39,8 @@
         "symfony/phpunit-bridge": "^4.3",
         "symfony/maker-bundle": "^1.14",
         "fzaninotto/faker": "^1.8",
-        "dama/doctrine-test-bundle": "^6.2"
+        "dama/doctrine-test-bundle": "^6.2",
+        "squizlabs/php_codesniffer": "^3.5"
     },
     
     "scripts": {

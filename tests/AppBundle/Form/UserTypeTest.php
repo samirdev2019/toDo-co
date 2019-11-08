@@ -9,7 +9,6 @@ use Symfony\Component\Validator\Validation;
 use Symfony\Component\Form\Extension\Validator\ValidatorExtension;
 use Symfony\Component\Form\Test\TypeTestCase;
 
-
 class UserTypeTest extends TypeTestCase
 {
     /**
@@ -56,6 +55,5 @@ class UserTypeTest extends TypeTestCase
         foreach (array_keys($formData) as $key) {
             $this->assertArrayHasKey($key, $children);
         }
-    }    
+    }
 }
- 

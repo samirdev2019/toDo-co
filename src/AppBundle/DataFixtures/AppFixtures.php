@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @codeCoverageIgnore
- * 
+ *
  */
 class AppFixtures implements ORMFixtureInterface
 {
@@ -38,8 +38,7 @@ class AppFixtures implements ORMFixtureInterface
         $username = ['admin','user'];
         $roles = ['ROLE_ADMIN','ROLE_USER'];
         
-        for($i=0; $i<=1; $i++)
-        {
+        for ($i=0; $i<=1; $i++) {
             $user = new User();
             
             $user->setUsername($username[$i]);
@@ -48,8 +47,8 @@ class AppFixtures implements ORMFixtureInterface
             $password = $this->encoder->encodePassword($user, 'admin');
             $user->setPassword($password);
             $manager->persist($user);
-            for($j=0; $j<=20; $j++) {
-                $task = new Task ();
+            for ($j=0; $j<=20; $j++) {
+                $task = new Task();
                 $task->setCreatedAt(new \DateTime());
                 $task->setTitle($faker->jobTitle.' by-'.$roles[$i]);
                 $task->setContent($faker->sentence($nbWords = 6, $variableNbWords = true));
@@ -57,15 +56,15 @@ class AppFixtures implements ORMFixtureInterface
                 $task->setUser($user);
                 $manager->persist($task);
             }
-            for($k=0; $k<=20; $k++) {
-                $task = new Task ();
+            for ($k=0; $k<=20; $k++) {
+                $task = new Task();
                 $task->setCreatedAt(new \DateTime());
                 $task->setTitle($faker->jobTitle.' by-annonymous');
                 $task->setContent($faker->sentence($nbWords = 6, $variableNbWords = true));
                 $task->isDone($faker->boolean);
-                $manager->persist($task);            }
-            
+                $manager->persist($task);
+            }
         }
-       $manager->flush();
+        $manager->flush();
     }
 }

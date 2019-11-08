@@ -12,14 +12,20 @@ class DefaultControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/');
         $crawler = $client->followRedirects();
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
-        $this->assertStringContainsString('Redirecting to http://localhost/login',$client->getResponse()->getContent());
+        $this->assertStringContainsString(
+            'Redirecting to http://localhost/login',
+            $client->getResponse()->getContent()
+        );
     }
     public function testIndexAfetrLogin()
     {
-        $client = static::createClient( [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => 'admin'] );
-        $client->request( 'GET', '/');
+        $client = static::createClient([], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => 'admin']);
+        $client->request('GET', '/');
         $this->assertFalse($client->getResponse()->isRedirect());
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertStringContainsString('Consulter la liste des tâches à faire',$client->getResponse()->getContent());
+        $this->assertStringContainsString(
+            'Consulter la liste des tâches à faire',
+            $client->getResponse()->getContent()
+        );
     }
 }

@@ -14,13 +14,12 @@ use Symfony\Component\Security\Core\Authorization\AccessDecisionManager;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;
 
-
 class TaskVoterTest extends TestCase
 {
     private $decisionManager;
 
 
-    public function setUp():void 
+    public function setUp():void
     {
         $this->decisionManager = $this->CreateMock(AccessDecisionManagerInterface::class);
     }
@@ -29,20 +28,19 @@ class TaskVoterTest extends TestCase
         $user = $this->createMock(User::class);
         $user->method('getRoles')->willReturn($roles);
         return $user;
-        
-    } 
+    }
     private function createTask(?User $user): ?Task
     {
         $task = $this->createMock(Task::class);
         $task->method('getUser')->willReturn($user);
         return $task;
         //$this->task = $task;
-    } 
+    }
 
     /**
      * @dataProvider provideTestVoteData
      */
-    public function testVote($attribute, $subject, $user, $expected) 
+    public function testVote($attribute, $subject, $user, $expected)
     {
         $this->decisionManager->method('decide')->willReturn(true);
         $voter = new TaskVoter($this->decisionManager);
