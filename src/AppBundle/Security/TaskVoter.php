@@ -11,7 +11,9 @@ use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface
 class TaskVoter extends Voter
 {
     const DELETE = 'delete';
-    
+    private const ATTRIBUTES = [
+        self::DELETE,
+    ];
     private $decisionManager;
 
     public function __construct(AccessDecisionManagerInterface $decisionManager)
@@ -20,20 +22,11 @@ class TaskVoter extends Voter
     }
     protected function supports($attribute, $subject)
     {
-        // if the attribute isn't one we support, return false
-        if (!in_array($attribute, [self::DELETE])) {
-            return false;
-        }
-
-        // only vote on Task objects inside this voter
-        if (!$subject instanceof Task) {
-            return false;
-        }
-
-        return true;
+        return $subject instanceof Task
+               && in_array($attribute, self::ATTRIBUTES);
     }
 
-    protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
+    public function voteOnAttribute($attribute, $subject, TokenInterface $token)
     {
         $user = $token->getUser();
         if (!$user instanceof User) {
@@ -44,30 +37,23 @@ class TaskVoter extends Voter
         // $subject is a task object, thanks to supports
         /** @var Task $task */
         $task = $subject;
-        if ($this->decisionManager->decide($token, ['ROLE_ADMIN']) && null === $task->getUser()) {
-        // if user have ROLE_ADMIN then he is autorised to delete tasks attached to annonymous users
-            return true;
+        if (null === $task->getUser()) {
+            if ($this->decisionManager->decide($token, ['ROLE_ADMIN'])) {
+                // if user have ROLE_ADMIN then he is autorised to delete tasks attached to annonymous users
+                return true;
+            }
         }
-        if ($attribute === self::DELETE) {
-            return $this->canDelete($task, $user);
+        
+        switch ($attribute) {
+            case self::DELETE:
+                return $this->isOwner($task, $user);
         }
-
         throw new \LogicException('This code should not be reached!');
     }
 
-    private function canDelete(Task $task, User $user)
+    private function isOwner(Task $task, User $user)
     {
-        // if they owners of task (editors), they can delete
-        if ($this->isEditor($task, $user)) {  
-            return true;
-        }
-        // if the user is not the editor of task 
-        return false;
-    }
-
-    private function isEditor(Task $task, User $user)
-    {
-        // to get the entity of the user who owns this task object
+        // if they owners of task they can delete
         return $user === $task->getUser();
     }
 }

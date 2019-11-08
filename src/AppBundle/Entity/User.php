@@ -48,9 +48,9 @@ class User implements UserInterface
      */
     private $tasks;
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="string", length=50)
      */
-    private $roles;
+    private $role;
 
     public function __construct()
     {
@@ -98,17 +98,21 @@ class User implements UserInterface
     }
     /**
      * This getter role function is modified before the users have ROLE_USER AUTOMATICALLY
-     *  now user can have also their roles from database. 
+     *  now user can have also their roles from database.
      *
      * @return array
      */
     public function getRoles()
     {
-        $roles = $this->roles;
+        $roles [] = $this->role;
         // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
 
-    return array_unique($roles);
+        return array_unique($roles);
+    }
+    public function getRole()
+    {
+        return $this->role;
     }
     /**
      * This setter function allows to attribute the role to a user
@@ -116,9 +120,9 @@ class User implements UserInterface
      * @param array $roles
      * @return self
      */
-    public function setRoles(array $roles): self
+    public function setRole(string $role): self
     {
-        $this->roles = $roles;
+        $this->role = $role;
 
         return $this;
     }
@@ -127,7 +131,7 @@ class User implements UserInterface
     {
     }
     /**
-     * The getter of taks 
+     * The getter of taks
      *
      * @return mixed
      */
@@ -149,21 +153,5 @@ class User implements UserInterface
             $task->setUser($this);
         }
         return $this;
-    }
-     /**
-     * This function allow to remove an task of this user collection(tasks)
-     *
-     * @param task $task
-     *
-     * @return self
-     */
-    public function removeTask(Task $task): self
-    {
-        if ($this->tasks->contains($task)) {
-            $this->tasks->removeElement($task);
-            if ($task->getUser() === $this) {
-                $task->setUser(null);
-            }
-        }
     }
 }

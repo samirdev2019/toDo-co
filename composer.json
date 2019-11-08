@@ -29,14 +29,18 @@
         "sensio/framework-extra-bundle": "^5.0.0",
         "incenteev/composer-parameter-handler": "^2.0",
         "phpunit/phpunit": "^8.4",
-        "twig/twig": "^1.0||^2.0"
+        "twig/twig": "^1.0||^2.0",
+        "doctrine/doctrine-fixtures-bundle": "^3.2"
 
     },
     
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^4.3",
-        "symfony/maker-bundle": "^1.14"
+        "symfony/maker-bundle": "^1.14",
+        "fzaninotto/faker": "^1.8",
+        "dama/doctrine-test-bundle": "^6.2",
+        "squizlabs/php_codesniffer": "^3.5"
     },
     
     "scripts": {

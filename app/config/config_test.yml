@@ -1,5 +1,7 @@
 imports:
     - { resource: config_dev.yml }
+parameters:
+    database_name: symfony_test
 
 framework:
     test: ~
@@ -14,3 +16,12 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+security:
+    firewalls:
+        # replace 'main' by the name of your own firewall
+        main:
+            http_basic: ~
+dama_doctrine_test:
+  enable_static_connection: true
+  enable_static_meta_data_cache: true
+  enable_static_query_cache: true
