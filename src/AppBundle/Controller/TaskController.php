@@ -1,5 +1,15 @@
 <?php
-
+/**
+ * The TaskController file doc comment
+ *
+ * PHP version 7.2.10
+ *
+ * @category Class
+ * @package  Controller
+ * @author   Samir,saro0h <allabsamir666@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     src/AppBundle/Controller/TaskController
+ */
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Task;
@@ -8,9 +18,20 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * This class is used to manage the tasks
+ *
+ * @category Class
+ * @package  Controller
+ * @author   Samir,saro0h <allabsamir777@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     src/AppBundle/Controller/TaskController
+ */
 class TaskController extends Controller
 {
     /**
+     * This function returns the tasks list
+     *
      * @Route("/tasks", name="task_list")
      */
     public function listAction()
@@ -23,7 +44,12 @@ class TaskController extends Controller
     }
 
     /**
+     * This function allows to create a task
+     *
      * @Route("/tasks/create", name="task_create")
+     *
+     * @param Request $request
+     * @return void
      */
     public function createAction(Request $request)
     {
@@ -49,7 +75,13 @@ class TaskController extends Controller
     }
 
     /**
+     * This function allow to edit a task
+     *
      * @Route("/tasks/{id}/edit", name="task_edit")
+     *
+     * @param Task $task
+     * @param Request $request
+     * @return void
      */
     public function editAction(Task $task, Request $request)
     {
@@ -70,9 +102,13 @@ class TaskController extends Controller
             'task' => $task,
         ]);
     }
-
     /**
+     * This function allows to toggle a task
+     *
      * @Route("/tasks/{id}/toggle", name="task_toggle")
+     *
+     * @param Task $task
+     * @return void
      */
     public function toggleTaskAction(Task $task)
     {
@@ -83,9 +119,13 @@ class TaskController extends Controller
 
         return $this->redirectToRoute('task_list');
     }
-
     /**
+     * This Function allows to delete a task
+     *
      * @Route("/tasks/{id}/delete", name="task_delete")
+     *
+     * @param Task $task
+     * @return void
      */
     public function deleteTaskAction(Task $task)
     {

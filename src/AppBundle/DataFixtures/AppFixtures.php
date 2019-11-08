@@ -1,4 +1,5 @@
 <?php
+
 namespace AppBundle\DataFixtures;
 
 use AppBundle\Entity\Task;
@@ -26,7 +27,7 @@ class AppFixtures implements ORMFixtureInterface
         $this->encoder = $encoder;
     }
     /**
-     * Undocumented function
+     * This function used for loads data fixtures using the faker
      *
      * @param ObjectManager $manager
      * @return void

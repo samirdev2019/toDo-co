@@ -55,22 +55,12 @@ class Task
     {
         return $this->id;
     }
-    /**
-     * this function is'nt coverate in functional test because
-     * because the createAt is not used on task show !
-     * @return void
-     */
+  
     public function getCreatedAt()
     {
         return $this->createdAt;
     }
-    /**
-     * this function is'nt coverate in functional test because
-     * the createAt is initialised in the constructor !
-     *
-     * @param datetime $createdAt
-     * @return void
-     */
+    
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;

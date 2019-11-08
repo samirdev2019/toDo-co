@@ -6,6 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class DefaultControllerTest extends WebTestCase
 {
+    /**
+     * This function tests the redirection to the page login
+     *
+     * @return void
+     */
     public function testIndexRedirectionToLogin()
     {
         $client = static::createClient();
@@ -17,6 +22,11 @@ class DefaultControllerTest extends WebTestCase
             $client->getResponse()->getContent()
         );
     }
+    /**
+     * This function test authentication and access to the homepage after authentication
+     *
+     * @return void
+     */
     public function testIndexAfetrLogin()
     {
         $client = static::createClient([], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => 'admin']);

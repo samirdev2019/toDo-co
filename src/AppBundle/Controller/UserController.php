@@ -1,5 +1,15 @@
 <?php
-
+/**
+ * The UserController file doc comment
+ *
+ * PHP version 7.2.10
+ *
+ * @category Class
+ * @package  Controller
+ * @author   Samir,saro0h <allabsamir666@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     src/AppBundle/Controller/UserController
+ */
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
@@ -8,10 +18,22 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * This class is used to manage the tasks
+ *
+ * @category Class
+ * @package  Controller
+ * @author   Samir,saro0h <allabsamir777@gmail.com>
+ * @license  Copyright 2019 General public license
+ * @link     src/AppBundle/Controller/UserController
+ */
 class UserController extends Controller
 {
     /**
+     * This function displays the users list
+     *
      * @Route("/users", name="user_list")
+     * @return Response a template twig listing users
      */
     public function listAction()
     {
@@ -21,9 +43,13 @@ class UserController extends Controller
             ->getRepository('AppBundle:User')->findAll()]
         );
     }
-
     /**
+     * This function allows to create a user
+     *
      * @Route("/users/create", name="user_create")
+     *
+     * @param Request $request
+     * @return Response
      */
     public function createAction(Request $request)
     {
@@ -33,7 +59,6 @@ class UserController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            //dump($form->getData());die;
             $em = $this->getDoctrine()->getManager();
             $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
@@ -48,9 +73,14 @@ class UserController extends Controller
 
         return $this->render('user/create.html.twig', ['form' => $form->createView()]);
     }
-
     /**
+     * This function allows to edit a user
+     *
      * @Route("/users/{id}/edit", name="user_edit")
+     *
+     * @param User $user
+     * @param Request $request
+     * @return Response format html
      */
     public function editAction(User $user, Request $request)
     {
