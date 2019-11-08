@@ -1,7 +1,6 @@
 # ToDoList & co 
 ========
-
-this porject is created as part of a PHP / Symfony application developer training, using symfony 3.4 ,
+this porject is created as part of a PHP / Symfony application developer training, using symfony 3.4
 
 ## General idea around project
 improvement of an existing project :
@@ -25,7 +24,6 @@ improvement of an existing project :
 <p>3- Bootstrap 4</p>
 <p>4- jquery-3.2.1</p>
 
-
 ## How to install the project
 
 ### 1 - Download or clone the repository git form
@@ -45,7 +43,7 @@ improvement of an existing project :
 <pre><code>php bin/console doctrine:fixtures:load</pre></code>
 
 ### 6 - Run the server
-<pre><code>PHP -S localhost:8000</pre></code>
+``` PHP -S localhost:8000 ```
 
 ### 7- create data base and fixtures in test envirenement
 <p> add  --env = test  at the end of each line-command mentioned above 
@@ -54,22 +52,20 @@ improvement of an existing project :
 <code>php bin/console doctrine:schema:update --force --env=test</code>
 <code>php bin/console doctrine:fixtures:load --env=test</code>
 </pre>
-<h4> 8- User registred</h4>
+
+### 8- User registred
+
 <pre>
 <code>
-administrator
-<p>username : admin</p>
-<p>password : admin </p>
-<P>user</p>
-<p>username : user</p>
-<p>password : admin </p>
+<h6>administrator</h6>
+<p>username : admin | password : admin </p>
+<h6>user</h6>
+<p>username : user | password : admin </p>
 </code>
 </pre>
-<h4> 9-unit tests </h4>
-<pre>
-<code>
-vendor/bin/phpunit
-or
-vendor/bin/simple-phpunit
-</code>
-</pre>
+
+### 9-unit tests
+``` $ vendor/bin/phpunit | $ vendor/bin/simple-phpunit ```
+
+### 10 Code Coverage Analysis
+``` $ vendor/bin/phpunit --coverage-html web/test-coverage ```
