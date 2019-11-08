@@ -17,7 +17,6 @@ use AppBundle\Entity\User;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;
-
 /**
  * @category Class
  * @package  TaskVoter
@@ -38,7 +37,7 @@ class TaskVoter extends Voter
      */
     private $decisionManager;
     /**
-     * The AccessDecisionManager initialization in constructor
+     * The AccessDecisionManager initialization in constructor 
      * that it used for make authorization decisions.
      *
      * @param AccessDecisionManagerInterface $decisionManager
@@ -48,7 +47,7 @@ class TaskVoter extends Voter
         $this->decisionManager = $decisionManager;
     }
     /**
-     * This Function returns true if the subject is instance of a task class
+     * This Function returns true if the subject is instance of a task class 
      * and the attribute is equals to delete that defined in the private cont attributes array
      *
      * @param string $attribute
@@ -92,11 +91,13 @@ class TaskVoter extends Voter
             case self::DELETE:
                 return $this->isOwner($task, $user);
         }
+        // @codeCoverageIgnoreStart
         throw new \LogicException('This code should not be reached!');
+        // @codeCoverageIgnoreEnd
     }
     /**
-     * This method returns true if the actual user is the owner
-     * of the task
+     * This method returns true if the actual user is the owner 
+     * of the task 
      *
      * @param Task $task
      * @param User $user
