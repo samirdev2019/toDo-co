@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block header_title %}{% endblock %}
+
+{% block header_img %}<img class="slide-image" src="{{ asset('img/erreur403.jpg') }}" alt="todo list">{% endblock %}
+{% block body %}
+    <h1>Une erreur 403 accés non autorisé !</h1>
+    <p>
+        vous n'êtes pas autorisé à accéder au contenu de cette page
+         <a href="{{ path('homepage') }}">retournez à la page d'accueille</a>.
+    </p>
+{% endblock %}
