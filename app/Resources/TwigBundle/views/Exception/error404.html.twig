@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block header_title %}{% endblock %}
+
+{% block header_img %}<img class="slide-image" src="{{ asset('img/erreur404.jpg') }}" alt="todo list">{% endblock %}
+{% block body %}
+    <h1>Ops Une erreur 404 est survenue !</h1>
+    <h4>
+        La page demandée n'a pas pu être localisée ou n'existe pas.
+         vérifier pour toute URL mal orthographiée ou 
+         <a href="{{ path('homepage') }}">retournez à la page d'accueille</a>.
+    </h4>
+{% endblock %}
