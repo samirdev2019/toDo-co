@@ -60,12 +60,12 @@ class TaskController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+            $entityManger = $this->getDoctrine()->getManager();
             /* 1. correction d'annomalie: automatiquement, à la sauvegarde de la tâche,
              l’utilisateur actuellement authentifié soit rattaché à la tâche nouvellement créée. */
             $task->setUser($this->getUser());
-            $em->persist($task);
-            $em->flush();
+            $entityManger->persist($task);
+            $entityManger->flush();
             $this->addFlash('success', 'La tâche a été bien été ajoutée.');
 
             return $this->redirectToRoute('task_list');
@@ -130,9 +130,9 @@ class TaskController extends Controller
     public function deleteTask(Task $task)
     {
         $this->denyAccessUnlessGranted('delete', $task);
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($task);
-        $em->flush();
+        $entityManger = $this->getDoctrine()->getManager();
+        $entityManger->remove($task);
+        $entityManger->flush();
 
         $this->addFlash('success', 'La tâche a bien été supprimée.');
 
