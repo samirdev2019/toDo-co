@@ -142,7 +142,7 @@ Update README.md
 
 Good commit message subject :
 
-```
+```bash
 Document how to install the project
 ```
 
@@ -157,8 +157,8 @@ Fixes #42
 ```
 Good commit message with description :
 
-```
-Change web UI background color to pink
+```bash
+change color button delete to red
 ```
 ## Code Reviews
 
