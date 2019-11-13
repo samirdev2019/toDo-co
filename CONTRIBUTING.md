@@ -148,12 +148,12 @@ Document how to install the project
 
  in the commit description, explain why you did that and how it fixes
 something.
-```
+```bash
 call foo::bar() instead of bar::baz()
 
 This fixes a bug that arises when doing this or that, because baz() needs a
 flux capacitor object that might not be defined.
-Fixes #42
+Fixes #5
 ```
 Good commit message with description :
 
