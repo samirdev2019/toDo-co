@@ -17,12 +17,14 @@ improvement of an existing project :
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c66a130312a94f209fe0ce95d0d9cbf6)](https://www.codacy.com/manual/samirdev2019/toDo-co?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=samirdev2019/toDo-co&amp;utm_campaign=Badge_Grade)
 
 ## ToDo & co require & use
-<p>1- PHP 5.5.9 or an version ulterieure to run</p>
+<p>1- PHP 7.2.1 or an version ulterieure to run</p>
 <p>2-Mysql ~5.7.23</p>
 <p>3-phpunit ^8.4</p>
 <p>3- Bootstrap 4</p>
 <p>4- jquery-3.2.1</p>
+
 ## [How to contribute to the project](https://github.com/samirdev2019/toDo-co/blob/master/CONTRIBUTING.md)
+
 ## How to install the project
 
 ### 1 - Download or clone the repository git form
