@@ -26,10 +26,15 @@ Then, if it appears that it is indeed a real bug, you may report it using
 Github by following these points are taken care of:
 
 *   Check if the bug is not already reported.
+
 *   The title sums up the issue with clarity.
+
 *   A description of the workflow needed to reproduce the bug. Please try to make sentences, dumping an error message by itself is frowned upon.
+
 *   If your issue is an error page,**Do not** make a screenshot of the stack trace, as screenshots are not indexed by search engines and will make it difficult for other people to find your bug report.
+
 *   Screenshots should be considered additional data, and therefore, you should always provide a textual description of the bug. It is strongly recommended to provide them when reporting UI related bugs.
+
 *   Don't hesitate to give as much information as you can (OS, PHP
 version, extensions...).
  
@@ -51,8 +56,8 @@ Please [install php_codesniffer Standard Fixer](https://packagist.org/packages/s
 and run this command before committing your modifications:
 
 ```bash
-$ vendor/bin/phpcs
-$ vendor/bin/phpcbf
+./vendor/bin/phpcs
+./vendor/bin/phpcbf
 ```
 
 Please note that we try to keep phpdoc to a minimum, so if an `@param` phpdoc
