@@ -2,7 +2,7 @@
 
 Thanks for your interest in ToDO& co project!
 
-This document is about issues and pull requests and Code reviews.to know how to install the project look [the readme file](https://github.com/samirdev2019/toDo-co) 
+This document is about issues and pull requests and Code reviews.to know how to install the project look [the readme file](https://github.com/samirdev2019/toDo*co) 
 
 ## Summary
 
@@ -20,14 +20,13 @@ GitHub Issues is for **issues**, as opposed to question on how to use TodoList&c
 If you are not sure this is a bug, or simply want to ask such a question,
 please post your question on this email[allabsamir666@gmail.com](allabsamir666@gmail.com)
 
-
 If you happen to find a bug, we kindly request you report it.
 
 Then, if it appears that it is indeed a real bug, you may report it using
 Github by following these points are taken care of:
 
 *  Check if the bug is not already reported!
-*  The title sums up the issue with clarity.
+*  The title sums up the issue with clarity
 *  A description of the workflow needed to reproduce the bug. Please try to make sentences, dumping an error message by itself is frowned upon.
 *  If your issue is an error page,
  **Do not** make a screenshot of the stack trace, as screenshots are
@@ -36,7 +35,7 @@ find your bug report.
 
 *  Screenshots should be considered additional data, and therefore, you should
   always provide a textual description of the bug. It is strongly recommended
-to provide them when reporting UI-related bugs.
+to provide them when reporting UI*related bugs.
 *  Don't hesitate to give as much information as you can (OS, PHP
 version, extensions...)
  
@@ -50,9 +49,9 @@ But please, read the following before.
 
 #### Coding style
 
-Each project follows [PSR-1](http://www.php-fig.org/psr/psr-1/), [PSR-2](http://www.php-fig.org/psr/psr-2/)
+Each project follows [PSR*1](http://www.php*fig.org/psr/psr*1/), [PSR*2](http://www.php*fig.org/psr/psr*2/)
 and [Symfony Coding Standards](http://symfony.com/doc/current/contributing/code/standards.html) for coding style,
-[PSR-4](http://www.php-fig.org/psr/psr-4/) for autoloading.
+[PSR*4](http://www.php*fig.org/psr/psr*4/) for autoloading.
 
 Please [install php_codesniffer Standard Fixer](https://packagist.org/packages/squizlabs/php_codesniffer)
 and run this command before committing your modifications:
@@ -113,14 +112,14 @@ forced to do it on the same PR. In this kind of situation, please add a comment 
 
 If you want to change some dependencies, here are the rules:
 
--  Don't add support for a version lower than the current one.
--  Don't change the highest supported version to a lower one.
+*  Don't add support for a version lower than the current one.
+*  Don't change the highest supported version to a lower one.
 
 ##### Legacy branches
 
 Legacy branches are **NOT** supported at all. Any submitted Pull Request will be immediately closed.
 
-Core team members *may* cherry-pick some fixes from the stable branch to the legacy one if it's really needed
+Core team members *may* cherry*pick some fixes from the stable branch to the legacy one if it's really needed
 and if the legacy one is not too old (~less than one month).
 
 #### The commit message
@@ -170,7 +169,7 @@ By taking up this task, you will try to speed up this process by making sure the
 
 ### Commenting on a PR
 
-Before doing anything refrain to dive head-first in the details of the PR and try to see the big picture,
+Before doing anything refrain to dive head*first in the details of the PR and try to see the big picture,
 to understand the subject of the PR. If the PR fixes an issue, read the issue first.
 This is to avoid the pain of making a reviewer rework their whole PR and then not merging it.
 
@@ -180,11 +179,11 @@ Applying labels requires write access to PRs, but you can still advise if you do
 There are several labels that will help determine what the next version number will be.
 Apply the first label that matches one of this conditions, in that order:
 
--  `major`: there is a BC-break. The PR should target the `master` branch.
--  `minor`: there is a backwards-compatible change in the API. The PR should target the stable branch.
--  `patch`: this fixes an issue (not necessarily reported). The PR should target the stable branch.
--  `docs`: this PR is solely about the docs. `pedantic` is implied.
--  `pedantic`: this change does not warrant a release.
+*  `major`: there is a BC*break. The PR should target the `master` branch.
+*  `minor`: there is a backwards compatible change in the API. The PR should target the stable branch.
+*  `patch`: this fixes an issue (not necessarily reported). The PR should target the stable branch.
+*  `docs`: this PR is solely about the docs. `pedantic` is implied.
+*  `pedantic`: this change does not warrant a release.
 
 Also if you see that the PR lacks documentation, tests, a changelog note,
 or an upgrade note, use the appropriate label.
@@ -201,13 +200,13 @@ code yourself, or ping someone who can help.
 
 ## Manual merges
 
-Thanks to dev-kit, stable branches are regularly merged into master branches.
+Thanks to dev*kit, stable branches are regularly merged into master branches.
 It is great when it works, but often, there will be git conflicts and a human
 intervention will be needed. Let us assume we are working on a repository where
 the stable branch is 1.X. To do the merge manually, follow these steps:
-1. Fetch the latest commits: `git fetch --all`
+1. Fetch the latest commits: `git fetch **all`
 2. Checkout the master branch, and make sure it is up to date:
-   `git checkout -B master origin/master`
+   `git checkout *B master origin/master`
 3. Proceed with the merge: `git merge origin/1.X`
 4. Fix the conflicts (if you are doing this, it is because of conflicts,
    right?) `git mergetool`
@@ -216,5 +215,3 @@ the stable branch is 1.X. To do the merge manually, follow these steps:
 7. Create a pull request from `fork/1.X` to `origin/1.X`
 8. When the PR can be merged, do not merge it. Instead, use
    `git push origin 1.X`.
-
-
