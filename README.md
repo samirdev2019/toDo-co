@@ -1,5 +1,5 @@
 # ToDoList & co 
-========
+
 this porject is created as part of a PHP / Symfony application developer training, using symfony 3.4
 
 ## General idea around project
@@ -22,7 +22,7 @@ improvement of an existing project :
 <p>3-phpunit ^8.4</p>
 <p>3- Bootstrap 4</p>
 <p>4- jquery-3.2.1</p>
-
+## [How to contribute to the project](https://github.com/samirdev2019/toDo-co/blob/master/CONTRIBUTING.md)
 ## How to install the project
 
 ### 1 - Download or clone the repository git form
@@ -64,6 +64,8 @@ improvement of an existing project :
 </pre>
 
 ### 9-unit tests
+somme unit and functional tests need the test database, then the server of database must be lanced and test database mast be created (see step number 7)
+
 ``` $ vendor/bin/phpunit | $ vendor/bin/simple-phpunit ```
 
 ### 10 Code Coverage Analysis
