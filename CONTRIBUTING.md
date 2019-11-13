@@ -6,10 +6,10 @@ This document is about issues and pull requests and Code reviews.to know how to 
 
 ## Summary
 
-* [Issues](#issues)
-* [Pull Requests](#pull-requests)
-* [Coding style](#Coding-style)
-* [Code Reviews](#code-reviews)
+* [ Issues ](#issues)
+* [  Pull Requests](#pull-requests)
+* [ Coding style ](#Coding-style)
+*  [Code Reviews](#code-reviews)
 
 ## Issues
 
