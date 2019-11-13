@@ -6,9 +6,9 @@ This document is about issues and pull requests and Code reviews.to know how to 
 
 ## Summary
 
-* [ Issues ](#issues)
-* [  Pull Requests](#pull-requests)
-* [ Coding style ](#Coding-style)
+*  [Issues](#issues)
+*  [Pull Requests](#pull-requests)
+*  [Coding style](#Coding-style)
 *  [Code Reviews](#code-reviews)
 
 ## Issues
@@ -26,18 +26,18 @@ If you happen to find a bug, we kindly request you report it.
 Then, if it appears that it is indeed a real bug, you may report it using
 Github by following these points are taken care of:
 
-* Check if the bug is not already reported!
-* The title sums up the issue with clarity.
-* A description of the workflow needed to reproduce the bug. Please try to make sentences, dumping an error message by itself is frowned upon.
-* If your issue is an error page,
+*  Check if the bug is not already reported!
+*  The title sums up the issue with clarity.
+*  A description of the workflow needed to reproduce the bug. Please try to make sentences, dumping an error message by itself is frowned upon.
+*  If your issue is an error page,
  **Do not** make a screenshot of the stack trace, as screenshots are
 not indexed by search engines and will make it difficult for other people to
 find your bug report.
 
-* Screenshots should be considered additional data, and therefore, you should
+*  Screenshots should be considered additional data, and therefore, you should
   always provide a textual description of the bug. It is strongly recommended
 to provide them when reporting UI-related bugs.
-* Don't hesitate to give as much information as you can (OS, PHP
+*  Don't hesitate to give as much information as you can (OS, PHP
 version, extensions...)
  
 ## Pull Requests
@@ -87,10 +87,10 @@ If your PR contains an addition, a new feature, this one has to be fully covered
 
 Some rules have to be respected about the test:
 
-* All test methods must be prefixed by `test`. Example: `public function testCreateUser()`.
-* As opposed, the `@test` annotation is prohibited.
-* All test method names must be in camel case format.
-* Most of the time, the test class should have the same name as the targeted class, suffixed by `Test`.
+*  All test methods must be prefixed by `test`. Example: `public function testCreateUser()`.
+*  As opposed, the `@test` annotation is prohibited.
+*  All test method names must be in camel case format.
+*  Most of the time, the test class should have the same name as the targeted class, suffixed by `Test`.
 
 ### Writing a Pull Request
 
@@ -113,8 +113,8 @@ forced to do it on the same PR. In this kind of situation, please add a comment 
 
 If you want to change some dependencies, here are the rules:
 
-- Don't add support for a version lower than the current one.
-- Don't change the highest supported version to a lower one.
+-  Don't add support for a version lower than the current one.
+-  Don't change the highest supported version to a lower one.
 
 ##### Legacy branches
 
@@ -180,11 +180,11 @@ Applying labels requires write access to PRs, but you can still advise if you do
 There are several labels that will help determine what the next version number will be.
 Apply the first label that matches one of this conditions, in that order:
 
-- `major`: there is a BC-break. The PR should target the `master` branch.
-- `minor`: there is a backwards-compatible change in the API. The PR should target the stable branch.
-- `patch`: this fixes an issue (not necessarily reported). The PR should target the stable branch.
-- `docs`: this PR is solely about the docs. `pedantic` is implied.
-- `pedantic`: this change does not warrant a release.
+-  `major`: there is a BC-break. The PR should target the `master` branch.
+-  `minor`: there is a backwards-compatible change in the API. The PR should target the stable branch.
+-  `patch`: this fixes an issue (not necessarily reported). The PR should target the stable branch.
+-  `docs`: this PR is solely about the docs. `pedantic` is implied.
+-  `pedantic`: this change does not warrant a release.
 
 Also if you see that the PR lacks documentation, tests, a changelog note,
 or an upgrade note, use the appropriate label.
