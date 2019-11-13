@@ -136,7 +136,7 @@ lines, if needed, should contain a complete description of *why* you did this.
 
 Bad commit message subject:
 
-```
+```bash
 Update README.md
 ```
 
