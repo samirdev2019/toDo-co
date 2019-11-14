@@ -34,9 +34,9 @@ But please, read the following before.
 
 #### Coding style
 
-Each project follows [PSR*1](http://www.php*fig.org/psr/psr*1/), [PSR*2](http://www.php*fig.org/psr/psr*2/)
+Each project follows [PSR-1](http://www.php-fig.org/psr/psr-1/), [PSR-2](http://www.php-fig.org/psr/psr-2/)
 and [Symfony Coding Standards](http://symfony.com/doc/current/contributing/code/standards.html) for coding style,
-[PSR*4](http://www.php*fig.org/psr/psr*4/) for autoloading.
+[PSR-4](http://www.php-fig.org/psr/psr-4/) for autoloading.
 
 Please [install php_codesniffer Standard Fixer](https://packagist.org/packages/squizlabs/php_codesniffer)
 and run this command before committing your modifications:
