@@ -53,7 +53,7 @@ Please note that we try to keep phpdoc.
 Codacy is used to allow the analysis and tracking of code quality with each commit or pull requeste.
 correct errors related to your newly added functions to keep the application's debt stability
 
-#### The tests
+### The tests
 
 If your pull request contains an addition, a new feature, this one has to be minimum 70% covered by tests.
 
