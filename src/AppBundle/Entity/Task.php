@@ -144,7 +144,7 @@ class Task
         $this->content = $content;
     }
     /**
-     * the isser isdone 
+     * the isser isdone
      *
      * @return boolean
      */

@@ -83,6 +83,21 @@ class TaskVoterTest extends TestCase
         $this->assertEquals($expected, $voter->vote($tokenMock, $subject, [$attribute]));
     }
     /**
+     * This method tests the logicException of the TaskVoter
+     */
+    public function testLogicException()
+    {
+        $user = new User();
+        $subject = new Task();
+        $attribute = "edit";
+        $tokenMock = $this->CreateMock(TokenInterface::class);
+        $tokenMock->method('getUser')->willReturn($user);
+        $this->decisionManager->method('decide')->willReturn(false);
+        $this->expectException('LogicException');
+        $voter = new TaskVoter($this->decisionManager);
+        $voter->voteOnAttribute($attribute, $subject, $tokenMock);
+    }
+    /**
      * test data used by the method testVote
      */
     public function provideTestVoteData()
